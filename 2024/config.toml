@@ -1,0 +1,37 @@
+[paper_sizes]
+A5 = [148, 210]
+A4 = [210, 297]
+A3 = [297, 420]
+A2 = [420, 594]
+
+[page]
+bleed = [5,5]           # % bleed on x and y
+pixels_per_mm = 10      # pixels per mm
+landscape = true       # landscape or portrait
+
+[colours]
+stroke = 'black'
+fill = 'none'
+background = 'none'
+
+[stroke]
+width = 1
+
+[directories]
+output = '../output/'
+optimised = 'optimised/'
+
+[lint]
+rcfile = '../pylintrc'
+threshold = 9.9
+
+[DEFAULT]
+SIZE = [297, 420]    # A3
+LANDSCAPE = true
+PPMM = 10
+BLEED = [5,5]
+OUTPUT_DIR = '../output/'
+OPTIMISED_DIR = '../output/optimised/'
+STYLES = ['black', '10', 'none', 'none']
+
+
