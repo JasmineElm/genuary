@@ -39,6 +39,7 @@ COLOUR = "#000000"
 
 
 def split_space(space, direction):
+    # 
     if direction == 0:
         # split horizontally
         split = [space[0], space[1], space[2], space[3]//2]
