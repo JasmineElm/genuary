@@ -39,15 +39,14 @@ PIXEL_SIZE = 20
 # LOCAL FUNCTIONS
 
 
-import random
-
 def set_palette(length):
     """for each band, add a hex value to the palette"""
     channels = [random.randint(0, 1) for _ in range(3)]
     while sum(channels) == 0 or sum(channels) == 3:
         channels = [random.randint(0, 1) for _ in range(3)]
     local_palette = [
-        ["#" + "".join(str(hex(random.randint(0, 255) * channel))[2:].zfill(2) for channel in channels)]
+        ["#" + "".join(str(hex(random.randint(0, 255) * channel))[2:].zfill(2)
+                       for channel in channels)]
         for _ in range(length)
     ]
     return local_palette
@@ -78,6 +77,7 @@ def set_band(canvas, bands, pixel_size):
     return [width, height]
 
 
+utils.print_params(DEFAULT)
 svg_list = []
 
 band_size = set_band(DEFAULT["DRAWABLE_AREA"], PALETTE_SIZE, PIXEL_SIZE)
@@ -104,5 +104,7 @@ for row in range(rows):
             )
         )
 
-doc = svg.build_svg_file(DEFAULT["PAPER_SIZE"], DEFAULT["DRAWABLE_AREA"], svg_list)
+doc = svg.build_svg_file(DEFAULT["PAPER_SIZE"],
+                         DEFAULT["DRAWABLE_AREA"],
+                         svg_list)
 svg.write_file(DEFAULT["FILENAME"], doc)

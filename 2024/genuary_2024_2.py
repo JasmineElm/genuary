@@ -3,11 +3,12 @@
 """
     Genuary 2024, prompt 2: "No palettes."
 """
+import random
 import toml
 
 # local libraries
 from helpers import svg, utils, draw
-import random
+
 
 # Load config file and set DEFAULT parameters
 config = toml.load("config.toml")
@@ -81,32 +82,15 @@ def generate_circle_list(viewport, circle_count):
     return circle_list
 
 
-def draw_circle(xy_pos, radius, style_list, opacity):
-    """
-    Returns an SVG circle element as a string with the specified center
-    coordinates and radius.
-
-    Args:
-        cx (float): The x-coordinate of the center of the circle.
-        cy (float): The y-coordinate of the center of the circle.
-        r (float): The radius of the circle.
-
-    Returns:
-        str: An SVG circle element as a string.
-    """
-    circle_def = f"<circle cx='{xy_pos[0]}' cy='{xy_pos[1]}' r='{radius}' "
-    circle_style = f"stroke='{style_list[0]}' stroke-width='{style_list[1]}' "
-    circle_style += f"fill='{style_list[2]}'"
-    circle_style += f" opacity='{opacity}'/>"
-    return circle_def + "\n" + circle_style + "\n"
-
+utils.print_params(DEFAULT)
 
 svg_list = []
 # fill svg_list with svg objects
-for circle_def in generate_circle_list(DEFAULT["DRAWABLE_AREA"], CIRCLE_COUNT):
+for draw_circle_def in generate_circle_list(DEFAULT["DRAWABLE_AREA"],
+                                            CIRCLE_COUNT):
     skew_xy = skew_centre(DEFAULT["DRAWABLE_AREA"])
-    svg_list.append(draw_circle(skew_xy,
-                                circle_def,
+    svg_list.append(draw.circle(skew_xy,
+                                draw_circle_def,
                                 (255, 0, get_random_colour()),
                                 random.random()))
 

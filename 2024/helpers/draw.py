@@ -29,7 +29,7 @@ def rectangle(start_xy, width, height, styles):
     return f"<rect {position}{size}{stroke}{fill}/>"
 
 
-def circle(xy_pos, radius, style_list):
+def circle(xy_pos, radius, style_list, opacity=1):
     """
     Returns an SVG circle element as a string with the specified center
     coordinates and radius.
@@ -44,7 +44,8 @@ def circle(xy_pos, radius, style_list):
     """
     circle_def = f"<circle cx='{xy_pos[0]}' cy='{xy_pos[1]}' r='{radius}' "
     circle_style = f"stroke='{style_list[0]}' stroke-width='{style_list[1]}' "
-    circle_style += f"fill='{style_list[2]}' />"
+    circle_style += f"fill='{style_list[2]}'"
+    circle_style += f" opacity='{opacity}'/>"
     return circle_def + "\n" + circle_style + "\n"
 
 
@@ -52,13 +53,11 @@ def set_background(drawable_area, background_colour):
     """
     returns a rectangle of background_colour the size of the drawable area
     """
-    return box(
-        drawable_area[:2],
-        drawable_area[2] - drawable_area[0],
-        background_colour,
-        0,
-        background_colour,
-    )
+    return box(drawable_area[:2],
+               drawable_area[2] - drawable_area[0],
+               (background_colour,
+               0,
+               background_colour))
 
 
 def quadratic_curve(start_xy, control_xy, end_xy, style_list):
