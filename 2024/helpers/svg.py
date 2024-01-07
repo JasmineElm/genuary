@@ -116,12 +116,12 @@ def svg_header(paper_size, drawable_area):
     Returns:
         str: An SVG header string with the specified paper and canvas sizes.
     """
-    xml1 = "<?xml version='1.0' encoding='UTF-8' standalone='no'?>"
+    xml1 = "<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
     xml1 += f"<svg width='{paper_size[0]}' height='{paper_size[1]}' "
     xml1 += f"viewBox='{drawable_area[0]} {drawable_area[1]} "
     xml1 += f"{drawable_area[2]} {drawable_area[3]}' "
     xml1 += "xmlns='http://www.w3.org/2000/svg' version='1.1'>"
-    return xml1 + '\n'
+    return xml1
 
 
 def svg_footer():
@@ -335,3 +335,20 @@ def get_neighbours(point, grid, radius):
     return [p for p in grid if (point[0] - radius <= p[0] <= point[0] + radius
                                 and point[1] - radius <=
                                 p[1] <= point[1] + radius)]
+
+
+def get_random_colour():
+    """Return a random hex colour string."""
+    hex_colour = "#"+hex(random.randint(0, 16777215))[2:]
+    return hex_colour
+
+
+def get_random_coordinates(canvas):
+    """get random coordinates within the canvas
+
+    Args:
+        canvas (tuple): [min_x, min_y, max_x, max_y]
+    """
+    x = random.randint(canvas[0], canvas[2])
+    y = random.randint(canvas[1], canvas[3])
+    return (x, y)

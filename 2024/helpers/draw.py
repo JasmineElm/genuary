@@ -88,3 +88,11 @@ def polygon(points, style_list):
     xml += f"stroke='{style_list[0]}' stroke-width='{style_list[1]}' "
     xml += f"fill='{style_list[2]}' />"
     return xml
+
+
+def path(coords, style=('black', '1', 'none')):
+    # convert a list of coordinates to a path string
+    path = " ".join(f"{x} {y} L " for x, y in coords)
+    styles = f"stroke='{style[0]}' stroke-width='{style[1]}' fill='{style[2]}'"
+    path = f"<path d='M {path}' {styles}/>"
+    return path
