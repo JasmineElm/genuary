@@ -91,8 +91,18 @@ def polygon(points, style_list):
 
 
 def path(coords, style=('black', '1', 'none')):
-    # convert a list of coordinates to a path string
-    path = " ".join(f"{x} {y} L " for x, y in coords)
+    """
+    Generates an SVG path element from a list of coordinates and a style tuple.
+
+    Parameters:
+    coords (list of tuples): A list of (x, y) tuples representing coordinates.
+    style (tuple, optional): stroke color, stroke width, and fill color.
+                             Defaults to ('black', '1', 'none').
+
+    Returns:
+    str: An SVG path element as a string.
+    """
+    draw_path = " ".join(f"{x} {y} L " for x, y in coords)
     styles = f"stroke='{style[0]}' stroke-width='{style[1]}' fill='{style[2]}'"
-    path = f"<path d='M {path}' {styles}/>"
+    draw_path = f"<path d='M {draw_path}' {styles}/>"
     return path
