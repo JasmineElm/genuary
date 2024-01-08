@@ -6,6 +6,7 @@
 """
 import math
 import random
+import cairosvg
 
 
 def set_image_size(paper_size, ppmm, landscape=True):
@@ -151,10 +152,10 @@ def write_file(filename, svg_list):
     """ Write the SVG file """
     with open(filename, "w", encoding="utf-8") as svg_file:
         # make sure svg_list is a list of strings
-        if type(svg_list) is None:
+        if not isinstance(svg_list[0], str):
             print("svg_list is empty")
             return
-        if type(svg_list[0]) is not str:
+        if not isinstance(svg_list[0], str):
             print("svg_list is not a list of strings")
             return
         for line in svg_list:
@@ -352,3 +353,8 @@ def get_random_coordinates(canvas):
     x = random.randint(canvas[0], canvas[2])
     y = random.randint(canvas[1], canvas[3])
     return (x, y)
+
+
+def convert_to_png(svg_filename, dpi):
+    """convert an SVG file to PNG"""
+    cairosvg.svg2png(url=svg_filename, write_to=svg_filename+".png", dpi=dpi)

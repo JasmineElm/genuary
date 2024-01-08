@@ -3,7 +3,10 @@
 """
     Genuary 2024 - Day 7: "Progress Bar"
 """
+import os
+import glob
 import time
+from PIL import Image
 import toml
 
 # local libraries
@@ -27,6 +30,9 @@ OUTER_BLEED = 100  # px
 INNER_BLEED = OUTER_BLEED * 2
 PROGRESS = 0.3  # 30%
 FIDELITY = 1
+DPI = 300
+TMP_FILENAME = "tmp"
+TMP_FILENAME = utils.create_dir(DEFAULT['OUTPUT_DIR']) + TMP_FILENAME
 
 # LOCAL FUNCTIONS
 
@@ -85,6 +91,7 @@ utils.print_params(DEFAULT)
 min_x, min_y, max_x, max_y = DEFAULT['DRAWABLE_AREA']
 steps = timer_to_steps(TIMER, FIDELITY)
 print(f"seconds: {TIMER} fidelity: {FIDELITY} steps: {steps}")
+fill = svg.get_random_colour()
 for step in range(steps+1):
     print(f"Step: {step} of {steps}")
     time.sleep(1 / FIDELITY)
@@ -105,7 +112,7 @@ for step in range(steps+1):
                                    ['black', 0.5, 'white']))
 
     # third rectangle to represents progress
-    fill = svg.get_random_colour()
+
     svg_list.append(draw.rectangle((min_x + INNER_BLEED, min_y + INNER_BLEED),
                                    (max_x - min_x
                                        - (INNER_BLEED * 2)) * PROGRESS,
@@ -114,4 +121,25 @@ for step in range(steps+1):
 
     doc = svg.build_svg_file(
         DEFAULT['PAPER_SIZE'], DEFAULT['DRAWABLE_AREA'], svg_list)
+    # pad step with zeros
+    step = str(step).zfill(4)
+    fn = TMP_FILENAME + str(step) + ".svg"
+    svg.write_file(fn, doc)
+    # also overwrite the main file so we can see the progress
     svg.write_file(DEFAULT['FILENAME'], doc)
+# use PIL to convert the TMP_FILENAME files to a gif
+# sleep for 1 second to allow the last file to be written
+time.sleep(1)
+# convert the SVG files to PNG
+for image in glob.glob('{}/tmp*.svg'.format(DEFAULT['OUTPUT_DIR'])):
+    svg.convert_to_png(image, DPI)
+images = [Image.open(image) for image in glob.glob(
+    '{}/tmp*.svg.png'.format(DEFAULT['OUTPUT_DIR']))]
+
+images = sorted(images, key=lambda x: x.filename)
+
+images[0].save(DEFAULT['FILENAME']+".gif", save_all=True,
+               append_images=images[1:], duration=300, loop=0)
+# delete the TMP_FILENAME files
+for image in glob.glob('{}/tmp*.*'.format(DEFAULT['OUTPUT_DIR'])):
+    os.remove(image)
