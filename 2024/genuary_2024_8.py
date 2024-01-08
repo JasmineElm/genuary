@@ -28,6 +28,7 @@ DEFAULT.update({"FILENAME": utils.create_dir(
 STEPS = 10000
 DT = 0.01
 DPI = 300
+PNG_DPI = DPI / 3
 CM_PER_INCH = 2.54
 
 # LOCAL FUNCTIONS
@@ -72,7 +73,6 @@ for i in range(STEPS):
     xs[i + 1] = xs[i] + (x_dot * DT)
     ys[i + 1] = ys[i] + (y_dot * DT)
     zs[i + 1] = zs[i] + (z_dot * DT)
-    # print (xs[i], ys[i], zs[i])
 
 ax = plt.figure().add_subplot()
 
@@ -87,7 +87,7 @@ plt.gcf().set_size_inches(DEFAULT['SIZE'][0] / CM_PER_INCH,
 plt.gcf().set_dpi(DPI)
 
 plt.savefig(DEFAULT['FILENAME'])
-# save a lower res png for preview
+# halve the size and save again as png with 1/3 DPI
 plt.gcf().set_size_inches(DEFAULT['SIZE'][0] / (CM_PER_INCH*2),
                           DEFAULT['SIZE'][1] / (CM_PER_INCH*2))
 plt.savefig(DEFAULT['FILENAME'] + '.png', dpi=DPI / 3)
