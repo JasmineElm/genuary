@@ -29,7 +29,7 @@ def rectangle(start_xy, width, height, styles):
     return f"<rect {position}{size}{stroke}{fill}/>"
 
 
-def circle(xy_pos, radius, style_list, opacity=1):
+def circle(xy_pos, radius, style_list, opacity=1, addnl=""):
     """
     Returns an SVG circle element as a string with the specified center
     coordinates and radius.
@@ -45,8 +45,8 @@ def circle(xy_pos, radius, style_list, opacity=1):
     circle_def = f"<circle cx='{xy_pos[0]}' cy='{xy_pos[1]}' r='{radius}' "
     circle_style = f"stroke='{style_list[0]}' stroke-width='{style_list[1]}' "
     circle_style += f"fill='{style_list[2]}'"
-    circle_style += f" opacity='{opacity}'/>"
-    return circle_def + "\n" + circle_style + "\n"
+    circle_style += f" opacity='{opacity}' {addnl} />"
+    return circle_def + circle_style + "\n"
 
 
 def set_background(drawable_area, background_colour):

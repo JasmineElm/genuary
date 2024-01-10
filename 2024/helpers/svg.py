@@ -6,7 +6,7 @@
 """
 import math
 import random
-import cairosvg
+# import cairosvg
 
 
 def set_image_size(paper_size, ppmm, landscape=True):
@@ -293,6 +293,11 @@ def generate_square_grid(canvas, grid_size, noise=0.05):
              y + random.uniform(-grid_size * noise, grid_size * noise))
             for x in range(x_start, x_end, grid_size)
             for y in range(y_start, y_end, grid_size))
+
+
+def get_min_dimension(viewbox):
+    """Return the minimum dimension of the canvas"""
+    return min(viewbox[2] - viewbox[0], viewbox[3] - viewbox[1])
 
 
 def get_relationships(start_xy, end_xy, diag_def=3):

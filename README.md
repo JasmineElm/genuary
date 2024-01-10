@@ -43,11 +43,11 @@ my attempts at the genuary.art prompts
 ![day 9](output/9.svg) 
 [code](2024/genuary_2024_9.py)
 
-<!-- ## Day10: Hexagonal.
+## Day10: Hexagonal.
 
 ![day 10](output/10.svg) 
 [code](2024/genuary_2024_10.py)
-
+<!-- 
 ## Day 11: In the style of Anni Albers (1899-1994).
 
 ![day 11](output/11.svg)
