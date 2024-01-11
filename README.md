@@ -40,19 +40,17 @@ my attempts at the genuary.art prompts
 
 ## Day9: ASCII.
 
-![day 9](output/9.svg) 
-[code](2024/genuary_2024_9.py)
+![day 9](output/9.svg) [code](2024/genuary_2024_9.py)
 
 ## Day10: Hexagonal.
 
-![day 10](output/10.svg) 
-[code](2024/genuary_2024_10.py)
-<!-- 
+![day 10](output/10.svg) [code](2024/genuary_2024_10.py)
+
 ## Day 11: In the style of Anni Albers (1899-1994).
 
-![day 11](output/11.svg)
-[code](2024/genuary_2024_11.py)
+![day 11](output/11.svg) [code](2024/genuary_2024_11.py)
 
+<!-- 
 ## Day 12: Lava lamp.
 
 ![day 12](output/12.svg)

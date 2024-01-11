@@ -2,6 +2,9 @@
     This module contains functions used in the body of svg files
 """
 
+# TODO: Jan 10th 2024: draw functions should accept a dict of tags and values
+#                      for styling etc., see svg.dict_to_tags() for a starter.
+
 
 def line(start_xy, end_xy, width, colour):
     """return a line from start_xy to end_xy"""
