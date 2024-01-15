@@ -50,7 +50,6 @@ my attempts at the genuary.art prompts
 
 ![day 11](output/11.svg) [code](2024/genuary_2024_11.py)
 
-<!-- 
 ## Day 12: Lava lamp.
 
 ![day 12](output/12.svg)
@@ -62,6 +61,7 @@ my attempts at the genuary.art prompts
 [code](2024/genuary_2024_13.py)
 
 
+<!-- 
 ## Day 14: Less than 1KB artwork.
 
 ![day 14](output/14.svg)
