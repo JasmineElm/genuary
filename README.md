@@ -61,12 +61,12 @@ my attempts at the genuary.art prompts
 [code](2024/genuary_2024_13.py)
 
 
-<!-- 
 ## Day 14: Less than 1KB artwork.
 
 ![day 14](output/14.svg)
 [code](2024/genuary_2024_14.py)
 
+<!-- 
 ## Day 15: Use a physics library.
 
 ![day 15](output/15.svg)

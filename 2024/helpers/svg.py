@@ -141,9 +141,12 @@ def svg_footer():
 # build SVG file
 
 
-def svg_list_to_string(svg_list):
+def svg_list_to_string(svg_list, mini=False):
     """ convert a list of SVG lines to a string """
-    return "\n".join(svg_list)
+    if mini:
+        return "".join(svg_list)
+    else:
+        return "\n".join(svg_list)
 
 
 def build_svg_file(paper_size, drawable_area, svg_list):
@@ -157,7 +160,7 @@ def build_svg_file(paper_size, drawable_area, svg_list):
     return svg_list
 
 
-def write_file(filename, svg_list):
+def write_file(filename, svg_list, mini=False):
     """ Write the SVG file """
     with open(filename, "w", encoding="utf-8") as svg_file:
         # make sure svg_list is a list of strings
@@ -168,7 +171,10 @@ def write_file(filename, svg_list):
             print("svg_list is not a list of strings")
             return
         for line in svg_list:
-            svg_file.write(line + "\n")
+            if mini:
+                svg_file.write(line)
+            else:
+                svg_file.write(line + "\n")
 
 
 # overlap functions
@@ -372,3 +378,14 @@ def get_random_coordinates(canvas):
 def convert_to_png(svg_filename, dpi):
     """convert an SVG file to PNG"""
     cairosvg.svg2png(url=svg_filename, write_to=svg_filename+".png", dpi=dpi)
+
+
+def points_to_path(points, addnl_tags):
+    """convert a list of points to an SVG path"""
+    path = f"<path d='M {points[0][0]} {points[0][1]} "
+    for point in points[1:]:
+        path += f"L {point[0]} {point[1]} "
+    path += "' "
+    path += dict_to_tags(addnl_tags)
+    path += "/>"
+    return path
