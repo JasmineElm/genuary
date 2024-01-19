@@ -29,15 +29,13 @@ def create_dir(dir_path):
 
 
 def generate_filename():
-    """Generates a filename for the SVG file based on the name of the script,
-    the current date, and the current time.
+    """Generates a filename for the SVG file based on the name of the script
 
     Returns:
-      str: The filename in the format "<name of script>_<date>_<time>.svg".
+      str: The filename in the format "<name of script>.svg".
     """
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     name = sys.argv[0].split(".py")[0]
-    return "{}_{}.svg".format(name, timestamp)
+    return f"{name}.svg"
 
 
 def print_params(param_dict):

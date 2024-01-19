@@ -5,13 +5,15 @@
 # TODO: Jan 10th 2024: draw functions should accept a dict of tags and values
 #                      for styling etc., see svg.dict_to_tags() for a starter.
 
+from helpers import svg
 
-def line(start_xy, end_xy, width, colour):
+
+def line(start_xy, end_xy, addnl_styles):
     """return a line from start_xy to end_xy"""
+    styles = svg.dict_to_tags(addnl_styles)
     linedef = f"<line x1='{start_xy[0]}' y1='{start_xy[1]}' "
-    linedef += f" x2='{end_xy[0]}' y2='{end_xy[1]}' "
-    style = f"stroke-width='{width}' stroke='{colour}' />"
-    return linedef + style + "\n"
+    linedef += f" x2='{end_xy[0]}' y2='{end_xy[1]}' {styles} />" 
+    return linedef
 
 
 def box(start_xy, box_size, styles):
