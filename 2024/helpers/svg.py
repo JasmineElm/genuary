@@ -14,7 +14,7 @@ def dict_to_tags(tag_dict):
     # if dict is empty, break with warning
     if not tag_dict:
         print("tag_dict is empty, you'll probably have a broken SVG...")
-        return
+        return ""
     return " ".join([f"{key}='{value}'" for key, value in tag_dict.items()])
 
 

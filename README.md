@@ -12,7 +12,7 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ## Day 3: "Droste effect
 
-![day 3](output/03.svg) [code](2024/3.py)
+![day 3](output/03.svg) [code](2024/03.py)
 
 ## Day 4: "Pixels."
 
@@ -48,7 +48,7 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ## Day 12: Lava lamp
 
-![day 12](output/12.svg [code](2024/12.py)
+![day 12](output/12.svg) [code](2024/12.py)
 
 ## Day 13: Wobbly function day
 
@@ -72,17 +72,21 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 ## Day 17: Inspired by Islamic art
 ![day 17](output/17.svg)
 [code](2024/17.py)
+
 ## Day 18: Bauhaus
 ![day 18](output/18.svg)
 [code](2024/18.py)
 -->
+
 ## Day19: Flocking
-![day 19](output/19.svg)
-[code](2024/19.py)
-<!--
+
+![day 19](output/19.svg) [code](2024/19.py)
+
 ## Day20: Generative typography
-![day 20](output/20.svg)
-[code](2024/20.py)
+
+![day 20](output/20.svg) [code](2024/20.py)
+
+<!--
 ## Day21: Use a library that you haven’t used before
 ![day 21](output/21.svg)
 [code](2024/21.py)
