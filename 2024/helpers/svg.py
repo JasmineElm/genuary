@@ -243,7 +243,7 @@ def get_centre(viewbox):
     """Return the centre of the canvas"""
     diff_x = viewbox[2] - viewbox[0]
     diff_y = viewbox[3] - viewbox[1]
-    return (diff_x / 2, diff_y / 2)
+    return ((diff_x / 2)+viewbox[0], (diff_y / 2)+viewbox[1])
 
 
 def get_random_point(viewbox):

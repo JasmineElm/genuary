@@ -67,15 +67,15 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ![day 16](output/16.svg) [code](2024/16.py)
 
-<!--
-## Day 17: Inspired by Islamic art
-![day 17](output/17.svg)
-[code](2024/17.py)
 
-## Day 18: Bauhaus
+<!-- ## Day 17: Inspired by Islamic art
+![day 17](output/17.svg)
+[code](2024/17.py) -->
+
+<!-- ## Day 18: Bauhaus
 ![day 18](output/18.svg)
-[code](2024/18.py)
--->
+[code](2024/18.py) -->
+
 
 ## Day19: Flocking
 
@@ -88,35 +88,36 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 <!--
 ## Day21: Use a library that you haven’t used before
 ![day 21](output/21.svg)
-[code](2024/21.py)
-## Day22: Point - line - plane
+[code](2024/21.py) -->
+
+<!-- ## Day22: Point - line - plane
 ![day 22](output/22.svg)
-[code](2024/22.py)
+[code](2024/22.py) -->
 ## Day23: 64×64
 ![day 23](output/23.svg)
 [code](2024/23.py)
-## Day24: Impossible objects (undecided geometry)
+<!-- ## Day24: Impossible objects (undecided geometry)
 ![day 24](output/24.svg)
-[code](2024/24.py)
-## Day25: “I should try to recreate this with code”
+[code](2024/24.py) -->
+<!-- ## Day25: “I should try to recreate this with code”
 ![day 25](output/25.svg)
-[code](2024/25.py)
-## Day26: Grow a seed
+[code](2024/25.py) -->
+<!-- ## Day26: Grow a seed
 ![day 26](output/26.svg)
-[code](2024/26.py)
-## Day27: Code for one hour
+[code](2024/26.py) -->
+<!-- ## Day27: Code for one hour
 ![day 27](output/27.svg)
-[code](2024/27.py)
-## Day28: Skeuomorphism
+[code](2024/27.py) -->
+<!-- ## Day28: Skeuomorphism
 ![day 28](output/28.svg)
-[code](2024/28.py)
-## Day29: Signed Distance Functions
+[code](2024/28.py) -->
+<!-- ## Day29: Signed Distance Functions
 *(if we keep trying once per year, eventually we will be good at it!).*
 ![day 29](output/29.svg)
-[code](2024/29.py)
-## Day30: Shaders
+[code](2024/29.py) -->
+<!-- ## Day30: Shaders
 ![day 30](output/30.svg)
-[code](2024/30.py)
-## Day31: Generative music / Generative audio / Generative sound
+[code](2024/30.py) -->
+<!-- ## Day31: Generative music / Generative audio / Generative sound
 ![day 31](output/31.svg)
 [code](2024/31.py) -->
