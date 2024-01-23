@@ -128,3 +128,34 @@ def list_to_string(in_list):
         string: string of points
     """
     return ','.join(map(str, in_list))
+
+
+def calc_output_size(doc):
+    """ sum character counts in doc to get output size """
+    length = 0
+    for element in doc:
+        length += len(element)
+    return human_values(length)
+
+
+def human_values(integer):
+    """ return a human readable value """
+    bold = "\033[1m"
+    red = "\033[91m"
+    amber = "\033[93m"
+    green = "\033[92m"
+    normal = "\033[0m"
+    fs = "File size: "
+    formats = [(10000000, f"{bold}{red}{fs}{{:.2f}}M{normal}", 1000000),
+               (1000000, f"{bold}{amber}{fs}{{:.2f}}M{normal}", 1000000),
+               (1000, f"{bold}{green}{fs}{{:.2f}}k{normal}", 1000)]
+
+    for threshold, format_str, divisor in formats:
+        if integer > threshold:
+            outstr = format_str.format(integer / divisor)
+            break
+    else:
+        outstr = str(integer)  # shouldn't get here...
+
+    print(outstr)
+    return outstr

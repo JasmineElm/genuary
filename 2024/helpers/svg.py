@@ -6,6 +6,7 @@
 """
 import math
 import random
+from helpers import utils
 # import cairosvg
 
 
@@ -162,6 +163,8 @@ def build_svg_file(paper_size, drawable_area, svg_list):
 
 def write_file(filename, svg_list, mini=False):
     """ Write the SVG file """
+    # calculate size of output file
+    utils.calc_output_size(svg_list)
     with open(filename, "w", encoding="utf-8") as svg_file:
         # make sure svg_list is a list of strings
         if not isinstance(svg_list[0], str):

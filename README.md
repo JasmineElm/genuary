@@ -58,11 +58,10 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ![day 14](output/14.svg) [code](2024/14.py)
 
-<!--
+
 ## Day 15: Use a physics library
 ![day 15](output/15.svg)
 [code](2024/15.py)
--->
 
 ## Day 16: Draw 10 000 of something
 
