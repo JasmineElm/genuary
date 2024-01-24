@@ -7,7 +7,7 @@
 import math
 import random
 from helpers import utils
-# import cairosvg
+import cairosvg
 
 
 def dict_to_tags(tag_dict):
@@ -392,3 +392,20 @@ def points_to_path(points, addnl_tags):
     path += dict_to_tags(addnl_tags)
     path += "/>"
     return path
+
+
+def set_background(viewbox, colour):
+    """set a path rectangle of colour the size of the viewbox"""
+    return f"<path id='background' d='M{viewbox[0]} {viewbox[1]} " \
+        + f"L{viewbox[2]} {viewbox[1]} L{viewbox[2]} {viewbox[3]} " \
+        + f"L{viewbox[0]} {viewbox[3]} L{viewbox[0]} {viewbox[1]}' " \
+        + f"fill='{colour}' />"
+
+
+def set_clip_path(viewbox):
+    """set a path rectangle of colour the size of the viewbox"""
+    return "<defs><clipPath id='clip'><path id='background' " \
+        + f"d='M{viewbox[0]} {viewbox[1]} " \
+        + f"L{viewbox[2]} {viewbox[1]} L{viewbox[2]} {viewbox[3]} " \
+        + f"L{viewbox[0]} {viewbox[3]} L{viewbox[0]} {viewbox[1]}' " \
+        + "fill='none' /></clipPath></defs>"

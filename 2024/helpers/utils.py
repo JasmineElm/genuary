@@ -7,7 +7,7 @@
 """
 import os
 import sys
-import datetime
+# import datetime # no longer used here; simple file name generation...
 import math
 from math import pi, cos, sin
 import random
@@ -148,7 +148,8 @@ def human_values(integer):
     fs = "File size: "
     formats = [(10000000, f"{bold}{red}{fs}{{:.2f}}M{normal}", 1000000),
                (1000000, f"{bold}{amber}{fs}{{:.2f}}M{normal}", 1000000),
-               (1000, f"{bold}{green}{fs}{{:.2f}}k{normal}", 1000)]
+               (1000, f"{bold}{green}{fs}{{:.2f}}k{normal}", 1000),
+               (100, f"{bold}{green}{fs}{{}}b{normal}", 1)]
 
     for threshold, format_str, divisor in formats:
         if integer > threshold:
