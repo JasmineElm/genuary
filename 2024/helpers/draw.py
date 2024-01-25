@@ -54,6 +54,11 @@ def circle(xy_pos, radius, style_list, opacity=1, addnl=""):
     return circle_def + circle_style + "\n"
 
 
+def circle2(xy_pos, radius, addnl=""):
+    circle_def = f"<circle cx='{xy_pos[0]}' cy='{xy_pos[1]}' r='{radius}' "
+    circle_def += f" {addnl} />"
+    return circle_def
+
 def set_background(drawable_area, background_colour):
     """
     returns a rectangle of background_colour the size of the drawable area

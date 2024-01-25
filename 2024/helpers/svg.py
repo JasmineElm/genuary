@@ -246,11 +246,15 @@ def get_centre(viewbox):
     return ((diff_x / 2)+viewbox[0], (diff_y / 2)+viewbox[1])
 
 
-def get_random_point(viewbox):
-    """Return a random point within the canvas"""
-    return (random.randint(viewbox[0], viewbox[2]),
-            random.randint(viewbox[1], viewbox[3]))
-
+def get_random_point(viewbox, quantize=1):
+    """Return a random point within the canvas
+       quantize is the number of pixels to quantize to"""
+    # generate and quantize x
+    x_range_quantized = range(viewbox[0], viewbox[2], quantize)
+    y_range_quantized = range(viewbox[1], viewbox[3], quantize)
+    point_x = random.choice(x_range_quantized)
+    point_y = random.choice(y_range_quantized)
+    return (point_x, point_y)
 
 def set_polygon_size(viewable_area, polygons_per_min_dimension):
     """Set a polygon size based on how many will fit

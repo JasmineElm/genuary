@@ -99,9 +99,9 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 ## Day24: Impossible objects (undecided geometry)
 ![day 24](output/24.svg)
 [code](2024/24.py)
-<!-- ## Day25: “I should try to recreate this with code”
+## Day25: “I should try to recreate this with code”
 ![day 25](output/25.svg)
-[code](2024/25.py) -->
+[code](2024/25.py)
 <!-- ## Day26: Grow a seed
 ![day 26](output/26.svg)
 [code](2024/26.py) -->
