@@ -54,6 +54,8 @@ def string_to_object(string, xy, font_styles):
 utils.print_params(DEFAULT)
 
 svg_list = []
+svg_list.append(svg.set_background(DEFAULT['DRAWABLE_AREA'], "#fff"))
+svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
 # fill svg_list with svg objects
 for text_obj in range(OBJECT_COUNT):
     text_str = random_text_string(random.randint(1, 10),
@@ -66,4 +68,5 @@ for text_obj in range(OBJECT_COUNT):
 
 doc = svg.build_svg_file(
     DEFAULT['PAPER_SIZE'], DEFAULT['DRAWABLE_AREA'], svg_list)
+
 svg.write_file(DEFAULT['FILENAME'], doc)

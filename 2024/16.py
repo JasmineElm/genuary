@@ -77,6 +77,8 @@ def set_path(start_xy, rotation, length):
 utils.print_params(DEFAULT)
 
 svg_list = []
+svg_list.append(svg.set_background(DEFAULT['DRAWABLE_AREA'], "#fff"))
+svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
 # set a grid of LINE_LEN x LINE_LEN
 y = MIN_Y + ROW_HEIGHT
 cnt = 0
@@ -97,7 +99,7 @@ for rows in range(ROWS):
         pth = set_path(xy, rot, LINE_LEN)
         path_list.append(pth)
         cnt += 1
-        print(f"cnt: {cnt}")
+        # print(f"cnt: {cnt}")
     svg_list.append(draw_line_group(path_list, STYLES))
     path_list = []
 

@@ -41,6 +41,8 @@ def draw_box(xy, size, addnl_styles):
 
 
 svg_list = []
+svg_list.append(svg.set_background(DEFAULT['DRAWABLE_AREA'], "#fff"))
+svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
 # find largest square that fits in drawable area that's divisible by 64
 # use that as the grid size
 min_dim = min(DEFAULT['DRAWABLE_AREA'][2]-DEFAULT['DRAWABLE_AREA'][0],

@@ -115,4 +115,4 @@ def path(coords, style=('black', '1', 'none')):
     draw_path = " ".join(f"{x} {y} L " for x, y in coords)
     styles = f"stroke='{style[0]}' stroke-width='{style[1]}' fill='{style[2]}'"
     draw_path = f"<path d='M {draw_path}' {styles}/>"
-    return path
+    return draw_path

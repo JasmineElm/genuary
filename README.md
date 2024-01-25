@@ -32,7 +32,7 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ## Day8: Chaotic system
 
-![day 8](output/8.svg) [code](2024/8.py)
+![day 8](output/08.svg) [code](2024/8.py)
 
 ## Day9: ASCII
 

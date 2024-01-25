@@ -63,6 +63,8 @@ def draw_path(xy, canvas, segment_length):
 utils.print_params(DEFAULT)
 
 svg_list = []
+svg_list.append(svg.set_background(DEFAULT['DRAWABLE_AREA'], "#fff"))
+svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
 # fill svg_list with svg objects
 start_pos = svg.get_random_coordinates(DEFAULT['DRAWABLE_AREA'])
 start_pos = svg.get_centre(DEFAULT['DRAWABLE_AREA'])
@@ -83,7 +85,7 @@ for i in range(OVERALL_LENGTH):
     colour = svg.get_random_colour()
     path = draw.path(coordinates, (colour, STYLES[1], STYLES[2]))
     svg_list.append(path)
-
 doc = svg.build_svg_file(
     DEFAULT['PAPER_SIZE'], DEFAULT['DRAWABLE_AREA'], svg_list)
+
 svg.write_file(DEFAULT['FILENAME'], doc)

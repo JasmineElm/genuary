@@ -111,6 +111,8 @@ def tile(canvas, depth, line_width, colour):
 
 utils.print_params(DEFAULT)
 svg_list = []
+svg_list.append(svg.set_background(DEFAULT['DRAWABLE_AREA'], "#fff"))
+svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
 draw_canvas = DEFAULT["DRAWABLE_AREA"]
 # add a 5px bleed to the canvas
 draw_canvas = [draw_canvas[0] + 5,
