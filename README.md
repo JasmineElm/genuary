@@ -58,15 +58,13 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ![day 14](output/14.svg) [code](2024/14.py)
 
-
 ## Day 15: Use a physics library
-![day 15](output/15.svg)
-[code](2024/15.py)
+
+![day 15](output/15.svg) [code](2024/15.py)
 
 ## Day 16: Draw 10 000 of something
 
 ![day 16](output/16.svg) [code](2024/16.py)
-
 
 <!-- ## Day 17: Inspired by Islamic art
 ![day 17](output/17.svg)
@@ -75,7 +73,6 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 <!-- ## Day 18: Bauhaus
 ![day 18](output/18.svg)
 [code](2024/18.py) -->
-
 
 ## Day19: Flocking
 
@@ -93,18 +90,23 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 <!-- ## Day22: Point - line - plane
 ![day 22](output/22.svg)
 [code](2024/22.py) -->
+
 ## Day23: 64×64
-![day 23](output/23.svg)
-[code](2024/23.py)
+
+![day 23](output/23.svg) [code](2024/23.py)
+
 ## Day24: Impossible objects (undecided geometry)
-![day 24](output/24.svg)
-[code](2024/24.py)
+
+![day 24](output/24.svg) [code](2024/24.py)
+
 ## Day25: “I should try to recreate this with code”
-![day 25](output/25.svg)
-[code](2024/25.py)
-<!-- ## Day26: Grow a seed
-![day 26](output/26.svg)
-[code](2024/26.py) -->
+
+![day 25](output/25.svg) [code](2024/25.py)
+
+## Day26: Grow a seed
+
+![day 26](output/26.svg) [code](2024/26.py)
+
 <!-- ## Day27: Code for one hour
 ![day 27](output/27.svg)
 [code](2024/27.py) -->

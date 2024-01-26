@@ -256,6 +256,7 @@ def get_random_point(viewbox, quantize=1):
     point_y = random.choice(y_range_quantized)
     return (point_x, point_y)
 
+
 def set_polygon_size(viewable_area, polygons_per_min_dimension):
     """Set a polygon size based on how many will fit
        in the smallest dimension
@@ -403,7 +404,7 @@ def set_background(viewbox, colour):
     return f"<path id='background' d='M{viewbox[0]} {viewbox[1]} " \
         + f"L{viewbox[2]} {viewbox[1]} L{viewbox[2]} {viewbox[3]} " \
         + f"L{viewbox[0]} {viewbox[3]} L{viewbox[0]} {viewbox[1]}' " \
-        + f"fill='{colour}' />"
+        + f"fill='{colour}'/>"
 
 
 def set_clip_path(viewbox):
