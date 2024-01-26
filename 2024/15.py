@@ -4,12 +4,12 @@
     Genuary 2024 - Day 15: "Use a physics library."
     Well, I didn't do this, but created a tinkerbell plot instead
 """
-
+import matplotlib.pyplot as plt
 import toml
 
 
 # local libraries
-from helpers import svg, utils, draw
+from helpers import svg, utils
 
 
 # Load config file and set DEFAULT parameters
@@ -31,7 +31,7 @@ C = 2.0
 D = 0.5
 X = 0.01
 Y = 0.01
-N = 10000
+N = 100000
 
 
 # LOCAL FUNCTIONS
@@ -39,7 +39,7 @@ N = 10000
 
 def tinkerbell_attractor(a, b, c, d, x, y, n):
     """
-    Generates a sequence of coordinates for the Tinkerbell map, which is a type of chaotic map.
+    Generates a sequence of coordinates for the Tinkerbell map.
 
     Parameters:
     a, b, c, d (float): The parameters of the Tinkerbell map.
@@ -98,34 +98,37 @@ def draw_point(x, y, r):
 
 # range goes from (-1 - 1) to (1,  1) map that to CEntre of the page
 CENTRE = svg.get_centre(DEFAULT['DRAWABLE_AREA'])
-canvas_min_x, canvas_min_y, canvas_max_x, canvas_max_y = DEFAULT['DRAWABLE_AREA']
+canvas_min_x, \
+    canvas_min_y, \
+    canvas_max_x, \
+    canvas_max_y = DEFAULT['DRAWABLE_AREA']
 
 svg_list = []
+svg_list.append(svg.set_background(
+    DEFAULT['DRAWABLE_AREA'], "white"))
+svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
+
 circle_list = []
 circle_list.append(tinkerbell_attractor(A, B, C, D, X, Y, N))
 # add the circles to the canvas
 
 
-# work out min and max x, and y values
+# # work out min and max x, and y values
 list_min_x = min(circle_list[0], key=lambda t: t[0])[0]
 list_max_x = max(circle_list[0], key=lambda t: t[0])[0]
 list_min_y = min(circle_list[0], key=lambda t: t[1])[1]
 list_max_y = max(circle_list[0], key=lambda t: t[1])[1]
 
-for circle in circle_list:
-    for x_pos, y_pos in circle:
-        x_pos = map_range(x_pos, list_min_x, list_max_x,
-                          canvas_min_x, canvas_max_x)
-        y_pos = map_range(y_pos, list_min_y, list_max_y,
-                          canvas_min_y, canvas_max_y)
-        svg_list.append(draw.circle((x_pos, x_pos), 1,
-                                    ("black", 0, "black")))
+fig = plt.figure(figsize=(8, 8))
+ax = fig.add_subplot(111)
+ax.set_xlim(list_min_x, list_max_x)
+ax.set_ylim(list_min_y, list_max_y)
+ax.set_aspect('equal')
+ax.set_axis_off()
+ax.set_facecolor('white')
+# plot as a scatter plot
+ax.scatter(*zip(*circle_list[0]), s=0.1, color='black')
+# ax.plot(*zip(*circle_list[0]), color='black', linewidth=0.1)
+plt.show()
+fig.savefig(DEFAULT['FILENAME'], dpi=300, format='svg')
 
-
-utils.print_params(DEFAULT)
-
-
-doc = svg.build_svg_file(
-    DEFAULT['PAPER_SIZE'], DEFAULT['DRAWABLE_AREA'], svg_list)
-# print(utils.calc_output_size(doc))
-svg.write_file(DEFAULT['FILENAME'], doc)
