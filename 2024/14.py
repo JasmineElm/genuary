@@ -9,7 +9,7 @@ import toml
 
 
 # local libraries
-from helpers import svg, utils, draw
+from helpers import svg, utils
 
 # Load config file and set DEFAULT parameters
 config = toml.load("config.toml")
@@ -35,7 +35,7 @@ print(f"DRAWABLE_AREA_WIDTH: {DRAWABLE_AREA_WIDTH}")
 print(f"DRAWABLE_AREA_HEIGHT: {DRAWABLE_AREA_HEIGHT}")
 MIN_WIDTH = DRAWABLE_AREA_WIDTH // MAX_RECT_PER_ROW + GAP
 MAX_WIDTH = DRAWABLE_AREA_WIDTH // MIN_RECT_PER_ROW + GAP
-ROW_HEIGHT = (DRAWABLE_AREA_HEIGHT // ROWS) - GAP * ROWS
+ROW_HEIGHT = DRAWABLE_AREA_HEIGHT // ROWS
 STYLES = {"fill": "#444"}
 print(f"MIN_WIDTH: {MIN_WIDTH}")
 print(f"MAX_WIDTH: {MAX_WIDTH}")
@@ -44,10 +44,12 @@ print(f"MAX_WIDTH: {MAX_WIDTH}")
 
 
 def threecharhex():
-    # return a random 3 character hex colour e.g., anything between #000 and #fff
-   return f"#{random.randint(0, 0xfff):03x}"
+    """ return a random 3 character hex colour """
+    return f"#{random.randint(0, 0xfff):03x}"
+
 
 def mini_grid(rect_def_list, styles):
+    """ set a grid of rectangles"""
     head = "<path d=\""
     tail = f"\" {svg.dict_to_tags(styles)}/>"
     body = ""
@@ -64,7 +66,7 @@ start_xy = [DEFAULT['DRAWABLE_AREA'][0], DEFAULT['DRAWABLE_AREA'][1]]
 # add a gap between each row
 for i in range(ROWS):
     # each row separated by GAP
-    row_y = start_xy[1] + GAP + (ROW_HEIGHT + GAP) * i
+    row_y = start_xy[1] + i * (ROW_HEIGHT + GAP)
     row_x = start_xy[0]
     rect_defs = []
     while row_x < MAX_X:
