@@ -107,9 +107,10 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ![day 26](output/26.svg) [code](2024/26.py)
 
-<!-- ## Day27: Code for one hour
-![day 27](output/27.svg)
-[code](2024/27.py) -->
+## Day27: Code for one hour
+
+![day 27](output/27.svg) [code](2024/27.py)
+
 <!-- ## Day28: Skeuomorphism
 ![day 28](output/28.svg)
 [code](2024/28.py) -->
