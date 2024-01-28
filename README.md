@@ -66,9 +66,9 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ![day 16](output/16.svg) [code](2024/16.py)
 
-<!-- ## Day 17: Inspired by Islamic art
-![day 17](output/17.svg)
-[code](2024/17.py) -->
+## Day 17: Inspired by Islamic art
+
+![day 17](output/17.svg) [code](2024/17.py)
 
 <!-- ## Day 18: Bauhaus
 ![day 18](output/18.svg)
