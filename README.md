@@ -70,9 +70,9 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 
 ![day 17](output/17.svg) [code](2024/17.py)
 
-<!-- ## Day 18: Bauhaus
+## Day 18: Bauhaus
 ![day 18](output/18.svg)
-[code](2024/18.py) -->
+[code](2024/18.py)
 
 ## Day19: Flocking
 
@@ -114,13 +114,16 @@ My attempts at the [genuary.art](https://genuary.art/prompts) prompts
 <!-- ## Day28: Skeuomorphism
 ![day 28](output/28.svg)
 [code](2024/28.py) -->
+
 <!-- ## Day29: Signed Distance Functions
 *(if we keep trying once per year, eventually we will be good at it!).*
 ![day 29](output/29.svg)
 [code](2024/29.py) -->
+
 <!-- ## Day30: Shaders
 ![day 30](output/30.svg)
 [code](2024/30.py) -->
+
 <!-- ## Day31: Generative music / Generative audio / Generative sound
 ![day 31](output/31.svg)
 [code](2024/31.py) -->
