@@ -42,7 +42,7 @@ utils.print_params(DEFAULT)
 
 svg_list = []
 svg_list.append(svg.set_background(DEFAULT['DRAWABLE_AREA'], "#fff"))
-svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
+# svg_list.append(svg.set_clip_path(DEFAULT['DRAWABLE_AREA']))
 # fill svg_list with svg objects
 # fill canvas with concentric hexagons
 

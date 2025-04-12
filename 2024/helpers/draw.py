@@ -25,6 +25,14 @@ def box(start_xy, box_size, styles):
     return f"<rect {position}{size}{stroke}{fill}/>"
 
 
+def box2(start_xy, box_size, addnl):
+    """draw a box"""
+    tags = svg.dict_to_tags(addnl)
+    position = f" x='{start_xy[0]}' y='{start_xy[1]}' "
+    size = f" width='{box_size}' height='{box_size}' "
+    return f"<rect {position}{size}{tags}/>"
+
+
 def rectangle(start_xy, width, height, styles):
     """draw a box"""
     position = f" x='{start_xy[0]}' y='{start_xy[1]}' "
@@ -54,9 +62,10 @@ def circle(xy_pos, radius, style_list, opacity=1, addnl=""):
     return circle_def + circle_style + "\n"
 
 
-def circle2(xy_pos, radius, addnl=""):
+def circle2(xy_pos, radius, addnl):
+    tags = svg.dict_to_tags(addnl)
     circle_def = f"<circle cx='{xy_pos[0]}' cy='{xy_pos[1]}' r='{radius}' "
-    circle_def += f" {addnl} />"
+    circle_def += f" {tags} />"
     return circle_def
 
 

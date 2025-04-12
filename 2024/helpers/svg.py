@@ -7,12 +7,16 @@
 import math
 import random
 from helpers import utils
-import cairosvg
+# import cairosvg
 
 
 def dict_to_tags(tag_dict):
     """convert a dict to a string of tags"""
     # if dict is empty, break with warning
+    # if type is string, return it
+    if isinstance(tag_dict, str):
+        print("tag_dict is a string, returning it...")
+        return tag_dict
     if not tag_dict:
         print("tag_dict is empty, you'll probably have a broken SVG...")
         return ""
@@ -156,6 +160,10 @@ def build_svg_file(paper_size, drawable_area, svg_list):
         svg_list
         footer
     """
+    # if svg_list is empty, break with warning
+    if not svg_list:
+        print("svg_list is empty, you'll probably have a broken SVG...")
+        return
     svg_list.insert(0, svg_header(paper_size, drawable_area))
     svg_list.append(svg_footer())
     return svg_list
@@ -164,6 +172,10 @@ def build_svg_file(paper_size, drawable_area, svg_list):
 def write_file(filename, svg_list, mini=False):
     """ Write the SVG file """
     # calculate size of output file
+    # if svg_list is empty, break with warning
+    if not svg_list:
+        print("svg_list is empty, you'll probably have a broken SVG...")
+        return
     utils.calc_output_size(svg_list)
     with open(filename, "w", encoding="utf-8") as svg_file:
         # make sure svg_list is a list of strings
@@ -369,6 +381,13 @@ def get_neighbours(point, grid, radius):
 def get_random_colour():
     """Return a random hex colour string."""
     hex_colour = "#"+hex(random.randint(0, 16777215))[2:]
+    return hex_colour
+
+
+def get_random_mono_colour():
+    # RBG all same value
+    hex_colour = "#"+hex(random.randint(0, 255))[2:]
+    print(f"hex_colour: {hex_colour}")
     return hex_colour
 
 

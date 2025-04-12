@@ -25,12 +25,12 @@ AXIOM = "-YF"
 RULES = {"X": "XFX-YF-YF+FX+FX-YF-YFFX+YF+FXFXYF-FX+YF+FXFX+YF-FXYF-YF-FX+FX+YFYF-",
          "Y": "+FXFX-YF-YF+FX+FXYF+FX-YFYF-FX-YF+FXYFYF-FX-YFFX+FX+YF-YF-FX+FX+YFY"}
 N = 3
-LINE_LENGTH = 40
+LINE_LENGTH = 169
 ANGLE = 90
 ANGLE_OFFSET = 90
 CENTRE = svg.get_centre(DEFAULT['DRAWABLE_AREA'])
-LINE_STYLE = {'stroke': '#fff', 'stroke-width': 10, "stroke-linecap": "round"}
-CENTRE = DEFAULT['DRAWABLE_AREA'][2] - 10, DEFAULT['DRAWABLE_AREA'][3] - 10
+LINE_STYLE = {'stroke': '#fff', 'stroke-width': 20, "stroke-linecap": "round"}
+CENTRE = DEFAULT['DRAWABLE_AREA'][2] - 20, DEFAULT['DRAWABLE_AREA'][3] - 20
 
 utils.print_params(DEFAULT)
 

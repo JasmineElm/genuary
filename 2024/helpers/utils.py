@@ -11,6 +11,7 @@ import sys
 import math
 from math import pi, cos, sin
 import random
+import datetime
 
 
 def create_dir(dir_path):
@@ -37,11 +38,29 @@ def generate_filename():
     name = sys.argv[0].split(".py")[0]
     return f"{name}.svg"
 
+def generate_filename_with_date():
+    """Generates a filename for the SVG file based on the name of the script
+
+    Returns:
+      str: The filename in the format "<name of script>.svg".
+    """
+    name = sys.argv[0].split(".py")[0]
+    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S_%f")[:-3]
+    return f"{name}_{date}.svg"
+
 
 def print_params(param_dict):
     """print the parameters"""
-    # print 80 * '-' + '\n'
-    print(f"{68*'-'}\n")
+    # if there is a key called 'NAME' in the param_dict, print it
+    if 'TITLE' in param_dict:
+        # work out length of name
+        title = f"--- {param_dict['TITLE']} "
+        # print --- name  +  --- (68 - name_length) times
+        print(f"{title}{(68-len(title))*'-'}\n")
+        # remove the name from the dict
+        param_dict.pop('TITLE')
+    else:
+        print(f"{68*'-'}\n")
     for key, value in param_dict.items():
         print(f"{key}: {value}")
     print(f"\n{68*'-'}")

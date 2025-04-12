@@ -128,7 +128,5 @@ ax.set_axis_off()
 ax.set_facecolor('white')
 # plot as a scatter plot
 ax.scatter(*zip(*circle_list[0]), s=0.1, color='black')
-# ax.plot(*zip(*circle_list[0]), color='black', linewidth=0.1)
-plt.show()
-fig.savefig(DEFAULT['FILENAME'], dpi=300, format='svg')
 
+fig.savefig(DEFAULT['FILENAME'], dpi=300, format='svg')

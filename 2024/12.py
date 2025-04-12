@@ -14,18 +14,21 @@ from helpers import svg, utils
 # Load config file and set DEFAULT parameters
 config = toml.load("config.toml")
 DEFAULT = config["DEFAULT"]
+UTILS = config["UTILS"]
 DEFAULT.update({"PAPER_SIZE": svg.set_image_size(DEFAULT['SIZE'],
                                                  DEFAULT['PPMM'],
                                                  DEFAULT['LANDSCAPE'])})
 DEFAULT.update({"DRAWABLE_AREA": svg.set_drawable_area(DEFAULT['PAPER_SIZE'],
                                                        DEFAULT['BLEED'])})
 DEFAULT.update({"FILENAME": utils.create_dir(
-    DEFAULT['OUTPUT_DIR']) + '12.svg'})
+    DEFAULT['OUTPUT_DIR']) + utils.generate_filename()})
+DEFAULT.update({"DPI": DEFAULT['PPMM'] * UTILS['CM_PER_INCH']})
 
 # LOCAL VARIABLES
 height = DEFAULT['DRAWABLE_AREA'][3] - DEFAULT['DRAWABLE_AREA'][1]
 width = DEFAULT['DRAWABLE_AREA'][2] - DEFAULT['DRAWABLE_AREA'][0]
 ymax, xmax = 3.5, 5
+
 
 # LOCAL FUNCTIONS
 
@@ -42,13 +45,21 @@ plt.figure(figsize=(100, 150),
 
 # line thickness for plot = 10px
 
-# plt.imshow(cy - cx, cmap='hot', interpolation='bicubic')
-plt.axis('off')
+
 plt.contour(x.ravel(), y.ravel(), (cy - cx),  linewidths=10)
 # minimise margins
+plt.axis('off')
 plt.tight_layout(pad=0)
-
+plt.gcf().set_size_inches(DEFAULT['SIZE'][0] / UTILS['CM_PER_INCH'],
+                          DEFAULT['SIZE'][1] / UTILS['CM_PER_INCH'])
+# set DPI to 300
+plt.gcf().set_dpi(DEFAULT['DPI'])
 # change background colour
 
 # save svg file
 plt.savefig(DEFAULT['FILENAME'], format="svg")
+
+# open the file to calculate file size
+with open(DEFAULT['FILENAME'], "r", encoding='utf-8') as svg_file:
+    # print file size
+    utils.calc_output_size(svg_file)

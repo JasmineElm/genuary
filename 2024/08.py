@@ -87,7 +87,7 @@ plt.gcf().set_size_inches(DEFAULT['SIZE'][0] / CM_PER_INCH,
 plt.gcf().set_dpi(DPI)
 
 plt.savefig(DEFAULT['FILENAME'])
-# halve the size and save again as png with 1/3 DPI
-plt.gcf().set_size_inches(DEFAULT['SIZE'][0] / (CM_PER_INCH*2),
-                          DEFAULT['SIZE'][1] / (CM_PER_INCH*2))
-plt.savefig(DEFAULT['FILENAME'] + '.png', dpi=DPI / 3)
+# # halve the size and save again as png with 1/3 DPI
+# plt.gcf().set_size_inches(DEFAULT['SIZE'][0] / (CM_PER_INCH*2),
+#                           DEFAULT['SIZE'][1] / (CM_PER_INCH*2))
+# plt.savefig(DEFAULT['FILENAME'] + '.png', dpi=DPI / 3)

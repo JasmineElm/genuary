@@ -27,6 +27,7 @@ rcfile = '../pylintrc'
 threshold = 9.9
 
 [DEFAULT]
+TITLE = 'DEFAULT PARAMETERS'
 SIZE = [297, 420]    # A3
 LANDSCAPE = true
 PPMM = 10
@@ -34,5 +35,13 @@ BLEED = [5,5]
 OUTPUT_DIR = '../output/'
 OPTIMISED_DIR = '../output/optimised/'
 STYLES = ['black', '10', 'none', 'none']
+    [DEFAULT.LINE_STYLE]
+    stroke = '#000'
+    stroke-width = 10
+    stroke-linecap = 'round'
 
 
+
+
+[UTILS]
+CM_PER_INCH = 2.54
